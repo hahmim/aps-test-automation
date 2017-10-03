@@ -44,7 +44,7 @@ public class XMLToDbVerification {
 		 AbstractApplicationContext context = new AnnotationConfigApplicationContext(DbConfig.class);
 		List <List<String>> data = arg1.raw();
 		CurrentIdentityDAO CurrentIdentityDAOImpl = (CurrentIdentityDAO) context.getBean("currentIdentity");
-		currentIdentity = CurrentIdentityDAOImpl.findByCurrentIdentityAttrById(Integer.parseInt(data.get(0).get(0)));
+		currentIdentity = CurrentIdentityDAOImpl.findIndividualCurrentIdentityAttrById(Integer.parseInt(data.get(0).get(0)));
 		System.out.println(currentIdentity.getFirstName());
 	}
 	@Then("^the <firstName>,  <lastName>, <SSN> and <DOB> from the XML should match with the output of the DB$")

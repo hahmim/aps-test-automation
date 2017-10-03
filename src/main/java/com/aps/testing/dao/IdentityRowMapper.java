@@ -19,6 +19,9 @@ public class IdentityRowMapper implements RowMapper<CurrentIdentity>{
 		CurrentIdentity currentIdentity = new CurrentIdentity();
 		CurrIdentityLicense currIdentityLicense = new CurrIdentityLicense();
 		CurrIdentityAddr currIdentityAddr = new CurrIdentityAddr();
+		currentIdentity.setBusinessName(rs.getString("BUSINESS_NAME"));
+		currentIdentity.setLegalName(rs.getString("LEGAL_NAME"));
+		currentIdentity.setEin(rs.getString("EIN"));
 		currentIdentity.setNamePrefix(rs.getString("NAME_PREFIX"));
 		currentIdentity.setNameSuffix(rs.getString("NAME_SUFFIX"));
 		currentIdentity.setFirstName(rs.getString("FIRST_NAME"));
@@ -28,11 +31,12 @@ public class IdentityRowMapper implements RowMapper<CurrentIdentity>{
 		currentIdentity.setSsn(rs.getString("SSN"));
 		currentIdentity.setNpi(rs.getString("NPI"));
 		try {
+			currentIdentity.setDod(simpleDateFormat.parse(rs.getString("DOD")));
 			currentIdentity.setDob(simpleDateFormat.parse(rs.getString("DOB")));
 			currIdentityLicense.setLicEffDate(simpleDateFormat.parse(rs.getString("LIC_EFF_DATE")));
 			currIdentityLicense.setLicTermDate(simpleDateFormat.parse(rs.getString("LIC_TERM_DATE")));
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		}
 		currIdentityLicense.setLicState(rs.getString("LIC_STATE"));

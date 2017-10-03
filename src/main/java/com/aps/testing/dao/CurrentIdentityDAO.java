@@ -8,5 +8,6 @@ import groovyjarjarcommonscli.ParseException;
 
 public interface CurrentIdentityDAO {
 
-	public CurrentIdentity findByCurrentIdentityAttrById(int currId) throws ParseException;
+	public CurrentIdentity findIndividualCurrentIdentityAttrById(int currId) throws ParseException;
+	public CurrentIdentity findOrganizationCurrentIdentityAttrById(int currId) throws ParseException;
 }

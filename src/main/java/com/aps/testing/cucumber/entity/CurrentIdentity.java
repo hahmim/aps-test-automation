@@ -3,14 +3,14 @@ package com.aps.testing.cucumber.entity;
 import java.math.BigDecimal;
 import java.util.Date;
 
-
 public class CurrentIdentity {
-private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
 	private long identityId;
 	private String actionFlag;
 	private String activeInd;
 	private Date alertDate;
+	private String businessName;
 	private String createdBy;
 	private Date createdDate;
 	private Date dateIncorporated;
@@ -67,6 +67,14 @@ private static final long serialVersionUID = 1L;
 
 	public void setAlertDate(Date alertDate) {
 		this.alertDate = alertDate;
+	}
+
+	public String getBusinessName() {
+		return businessName;
+	}
+
+	public void setBusinessName(String businessName) {
+		this.businessName = businessName;
 	}
 
 	public String getCreatedBy() {
