@@ -67,7 +67,7 @@ public class XMLToDbVerificationHelper {
 			String command2 = "sudo chown nifi:nifi /tmp/nifi/" + fileName;
 			String command3 = "sudo su - nifi ";
 			String conditionalComannd = "if \n"
-										+ "[ ! -f /tmp/nifi/"+fileName+ "] \n " 
+										+ "[ ! -f /tmp/nifi/"+fileName+ " ] \n " 
 										+ "then \n "+
 										command1+ " && "+command2+" && "+command3+" \n"+
 										" else \n"
